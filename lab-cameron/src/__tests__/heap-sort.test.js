@@ -10,4 +10,39 @@ describe('heap-sort.js', () => {
 
     expect(sorted).toEqual(expected);
   });
+
+  test('should return same array if provided with single element array', () => {
+    const arr = randomArray(1);
+    const sorted = heapSort(arr);
+    const expected = arr;
+
+    expect(sorted).toEqual(expected);
+  });
+
+  test('should return a small sorted array', () => {
+    const arr = randomArray(10);
+    const sorted = heapSort(arr);
+    const result = checkSorted(sorted);
+    const expected = true;
+
+    expect(result).toEqual(expected);
+  });
+
+  test('should return a medium sorted array', () => {
+    const arr = randomArray(100);
+    const sorted = heapSort(arr);
+    const result = checkSorted(sorted);
+    const expected = true;
+
+    expect(result).toEqual(expected);
+  });
+
+  test('should return a large sorted array', () => {
+    const arr = randomArray(1000);
+    const sorted = heapSort(arr);
+    const result = checkSorted(sorted);
+    const expected = true;
+
+    expect(result).toEqual(expected);
+  });
 });
